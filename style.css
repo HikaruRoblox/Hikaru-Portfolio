@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#09090f;
+    color:white;
+}
+
+/* NAVBAR */
+/* NAVBAR */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:120px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 14%;
+
+    background:rgba(5,5,10,.75);
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    z-index:1000;
+}
+
+.nav-brand{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.nav-brand h2{
+    font-size:2rem;
+    font-weight:600;
+    color:white;
+}
+
+.nav-brand span{
+    color:#8d8d95;
+    font-size:1rem;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:60px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#8d8d95;
+    font-size:1.1rem;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+ 
+.nav-btn{
+    text-decoration:none;
+
+    padding:18px 34px;
+
+    border-radius:18px;
+
+    background:#7c5cff;
+
+    color:#ffffff;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* Prevent hero from hiding behind navbar */
+
+.hero{
+    padding-top:120px;
+}
+
+.navbar::after{
+    content:"";
+
+    position:absolute;
+    bottom:0;
+    left:0;
+
+    width:100%;
+    height:1px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.15),
+        transparent
+    );
+}
+/* HERO */
+
+
+.hero-left{
+    max-width:550px;
+}
+
+.hero-left h1{
+    font-size:4rem;
+    line-height:1.1;
+}
+
+.hero-left p{
+    margin-top:20px;
+    color:#aaa;
+    font-size:1.1rem;
+}
+
+.hero-left button{
+    margin-top:35px;
+
+    padding:15px 35px;
+
+    border:none;
+    border-radius:12px;
+
+    background:#7c5cff;
+    color:white;
+
+    cursor:pointer;
+    font-size:1rem;
+
+    transition:.3s;
+}
+
+.hero-left button:hover{
+    transform:translateY(-3px);
+}
+.hero{
+    min-height:100vh;
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 8%;
+
+    overflow:hidden;
+}
+
+
+/* REMOVE justify-content:space-between */
+
+.hero-right{
+    position:absolute;
+
+    right:-350px;      /* pushes character off screen */
+    bottom: -300px;     /* cuts off legs */
+
+    z-index:1;
+}
+
+.hero-right img{
+    width:1400px;
+
+    animation:float 5s ease-in-out infinite;
+
+    user-select:none;
+    pointer-events:none;
+
+    filter:
+        drop-shadow(0 0 25px rgba(255, 255, 255, 0.203))
+        drop-shadow(0 0 80px rgba(255, 255, 255, 0.164));
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+}
+/* SECTIONS */
+
+.section{
+    padding:120px 10%;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:3rem;
+}
+
+/* WORK */
+
+.work-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:40px;
+
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.work-card{
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.work-card img{
+    width:100%;
+    display:block;
+
+    transition:.4s;
+}
+
+.work-card:hover img{
+    transform:scale(1.05);
+}
+
+/* PRICE */
+
+.price-card{
+    position:relative;
+
+    max-width:450px;
+    margin:auto;
+
+    padding:60px 40px;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    border-radius:30px;
+
+    text-align:center;
+}
+
+.price-tag{
+    position:absolute;
+
+    top:-25px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#7c5cff;
+
+    padding:12px 40px;
+
+    border-radius:999px;
+
+    font-size:1.5rem;
+    font-weight:600;
+}
+
+.price-card ul{
+    list-style:none;
+}
+
+.price-card li{
+    margin:18px 0;
+    color:#ddd;
+}
+
+.price-card button{
+    margin-top:30px;
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#7c5cff;
+    color:white;
+
+    cursor:pointer;
+}
+
+/* CONTACT */
+.contact-section{
+    max-width:1400px;
+    margin:auto;
+
+    padding:150px 10%;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+
+    position:relative;
+}
+
+.contact-section::before{
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    top:50%;
+
+    width:400px;
+    height:400px;
+
+    background:#7c5cff;
+
+    filter:blur(180px);
+
+    opacity:.15;
+
+    transform:translateY(-50%);
+}
+
+.contact-tag{
+    color:#7c5cff;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+.contact-left h2{
+    font-size:4rem;
+    line-height:1.1;
+
+    margin:20px 0;
+}
+
+.contact-left p{
+    color:#9b9b9b;
+    max-width:500px;
+
+    font-size:1.1rem;
+    line-height:1.7;
+}
+
+.contact-btn{
+    display:inline-block;
+
+    margin-top:35px;
+
+    padding:16px 35px;
+
+    background:#7c5cff;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:14px;
+
+    transition:.3s;
+}
+
+.contact-btn:hover{
+    transform:translateY(-4px);
+}
+
+.contact-right{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:28px;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    text-decoration:none;
+    color:white;
+
+    transition:.3s;
+}
+
+.contact-card:hover{
+    transform:translateX(10px);
+
+    border-color:#7c5cff;
+
+    background:rgba(124,92,255,0.1);
+}
+
+.contact-info h3{
+    font-size:1.2rem;
+    margin-bottom:6px;
+}
+
+.contact-info span{
+    color:#9b9b9b;
+}
+
+.arrow{
+    font-size:1.8rem;
+    color:#7c5cff;
+}
+
+@media(max-width:900px){
+
+.contact-section{
+    grid-template-columns:1fr;
+}
+
+.contact-left h2{
+    font-size:3rem;
+}
+
+}
